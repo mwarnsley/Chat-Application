@@ -9,4 +9,11 @@ gulp.task('minifycss', function(){
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default',['minifycss']);
+gulp.task('minifyjs', function(){
+    gulp.src('src/**/*.js')
+        .pipe(cssmin())
+        .pipe(rename({suffix:'.min'}))
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('default',['minifycss','minifyjs']);
