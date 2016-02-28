@@ -6,7 +6,7 @@ var server = http.createServer(app).listen(port);
 var io = require('socket.io').listen(server);
 var path = require('path');
 
-app.use(express.static(path.join(__dirname, 'src')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/', function(req, res){
     res.sendfile('index.html');
