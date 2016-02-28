@@ -15,7 +15,9 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
-    console.log("User has connected");
+    socket.on('chat message', function(msg){
+        console.log('message: ' + msg);
+    });
 });
 
 app.listen(port, function(){

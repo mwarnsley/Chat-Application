@@ -16,9 +16,14 @@
         </div>
 
 
+        <script src="js/jquery-2.2.1.js"></script>
         <script src="js/socket.io.js"></script>
         <script>
             var socket = io();
+            $('form').submit(function(){
+                $('#m').val('');
+                return false;
+            });
         </script>
     </body>
 </html>
