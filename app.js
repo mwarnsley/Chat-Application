@@ -1,13 +1,12 @@
-var express = require('express'),
-    http = require('http'),
-    io = require('socket.io')(http);
+var express = require('express');
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var path = require('path');
 
 var app = express();
-var server = http.createServer(app);
-var socket = io.listen(server);
 
-var path = require('path');
 var port = 8000;
+
 
 app.use(express.static(path.join(__dirname, 'src')));
 
