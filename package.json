@@ -1,0 +1,19 @@
+{
+  "name": "chatapplication",
+  "version": "1.0.0",
+  "description": "A simple chat application using Socket.IO",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mwarnsley/Chat-Application.git"
+  },
+  "author": "Marcus Warnsley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mwarnsley/Chat-Application/issues"
+  },
+  "homepage": "https://github.com/mwarnsley/Chat-Application#readme"
+}
