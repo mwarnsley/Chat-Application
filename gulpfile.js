@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     cssmin = require('gulp-cssmin'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    minify = require('gulp-minify');
 
 gulp.task('minifycss', function(){
     gulp.src('src/**/*.css')
@@ -10,10 +11,12 @@ gulp.task('minifycss', function(){
 });
 
 gulp.task('minifyjs', function(){
-    gulp.src('src/**/*.js')
-        .pipe(cssmin())
-        .pipe(rename({suffix:'.min'}))
-        .pipe(gulp.dest('dist'));
+    gulp.src('src/*.js')
+        .pipe(minify({
+            exclude: ['tasks'],
+            ignoreFiles: ['-min.js']
+        }))
+        .pipe(gulp.dest('dist'))
 });
 
 gulp.task('default',['minifycss','minifyjs']);
