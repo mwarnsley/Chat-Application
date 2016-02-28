@@ -11,8 +11,9 @@ form input {
     width: 90%;
 }
 form button {
-    width: 9%;
-    background: rgb(130, 224, 255);
+    width: 10%;
+    color: #ffffff;
+    background: #0000FF;
     border: none;
     padding: 10px;
 }
@@ -25,5 +26,9 @@ form button {
     padding: 5px 10px;
 }
 #messages li:nth-child(odd) {
-    background: #eee;
+    background: #0000FF;
+    color: #ffffff;
+}
+#messages li:nth-child(even) {
+    background: #eeeeee;
 }
