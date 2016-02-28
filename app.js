@@ -1,12 +1,10 @@
-var express = require('express');
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-var path = require('path');
-
-var app = express();
-
 var port = 8000;
-
+var http = require('http');
+var express = require('express');
+var app = express();
+var server = http.createServer(app).listen(port);
+var io = require('socket.io').listen(server);
+var path = require('path');
 
 app.use(express.static(path.join(__dirname, 'src')));
 
@@ -14,12 +12,12 @@ app.get('/', function(req, res){
     res.sendfile('index.html');
 });
 
-io.on('connection', function(socket){
-    socket.on('chat message', function(msg){
-        console.log('message: ' + msg);
-    });
+server.listen(port, function() {
+    console.log("Listening on port " + port + "...");
 });
 
-app.listen(port, function(){
-    console.log("Server running on port: " + port);
+io.on('connection', function(socket){
+    socket.on('chat message', function(msg){
+        io.emit('chat message', msg);
+    });
 });

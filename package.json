@@ -19,6 +19,7 @@
   "homepage": "https://github.com/mwarnsley/Chat-Application#readme",
   "dependencies": {
     "express": "^4.13.4",
+    "http-browserify": "^1.7.0",
     "path": "^0.12.7",
     "socket.io": "^1.4.5"
   },
