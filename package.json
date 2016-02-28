@@ -2,7 +2,7 @@
   "name": "chatapplication",
   "version": "1.0.0",
   "description": "A simple chat application using Socket.IO",
-  "main": "main.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/mwarnsley/Chat-Application#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "socket.io": "^1.4.5"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
